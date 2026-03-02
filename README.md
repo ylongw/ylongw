@@ -1,5 +1,3 @@
-### Hi, I'm Yunlong 👋
-
 Embedded engineer by day, AI tinkerer by night.
 
 I build things with **STM32 / Cortex-M / FreeRTOS** at work, and experiment with **AI agents + automation** on a Mac mini at home.
@@ -23,10 +21,6 @@ I build things with **STM32 / Cortex-M / FreeRTOS** at work, and experiment with
 #### 🛠️ Tech Stack
 
 `C` `C++` `Python` `TypeScript` `STM32` `GD32` `FreeRTOS` `NFC` `CMake` `Node.js`
-
-#### 📫 Find me
-
-- **小红书**: ClawCat（AI Agent 折腾日记）
 
 ---
 
