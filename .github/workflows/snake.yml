@@ -1,0 +1,50 @@
+name: Generate contribution snake
+
+on:
+  schedule:
+    - cron: '10 1 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/snake.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: contribution-snake-output
+  cancel-in-progress: false
+
+jobs:
+  snake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Draw both contribution snakes
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ylongw
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          outputs: |
+            dist/github-contribution-grid-snake.svg?color_snake=%2308785c&color_dots=%23e1eeeb,%23b2ded0,%2378c9ad,%233ba584,%2308785c
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=%2364c9f5&color_dots=%23182c39,%231b5147,%23287c63,%233ab08a,%2354e6b5
+      - name: Validate generated SVGs
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from xml.etree import ElementTree
+          paths = list(Path('dist').glob('*.svg'))
+          assert len(paths) == 2, 'Expected both snake themes'
+          for path in paths:
+              ElementTree.parse(path)
+          PY
+      - name: Publish SVGs to output branch
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+          keep_history: true
+          commit_message: 'chore(profile): refresh contribution snake'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

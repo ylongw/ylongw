@@ -1,0 +1,37 @@
+{
+  "username": "ylongw",
+  "updated_at": "2026-11-10T08:37:26Z",
+  "period_start": "2025-11-11T00:00:00Z",
+  "period_end": "2026-11-10T08:37:26Z",
+  "public_repositories": 46,
+  "original_repositories": 43,
+  "stars": 88,
+  "followers": 10,
+  "contributions": {
+    "commits": 163,
+    "issues": 3,
+    "pull_requests": 2,
+    "reviews": 0,
+    "repositories_created": 25
+  },
+  "total_contributions": 193,
+  "language_bytes": {
+    "C": 65063648,
+    "HTML": 2247720,
+    "C++": 1467378,
+    "CSS": 485522,
+    "Python": 469717,
+    "Assembly": 438843,
+    "CMake": 276258,
+    "JavaScript": 164768,
+    "Vue": 143581,
+    "Swift": 109949,
+    "Java": 96281,
+    "Shell": 53262,
+    "Makefile": 52465,
+    "Linker Script": 46113,
+    "Kotlin": 9611,
+    "Dockerfile": 2196
+  },
+  "scope": "Public owned repositories (including forks); language bytes exclude forks; public contributions only."
+}
